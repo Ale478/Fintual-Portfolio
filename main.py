@@ -1,4 +1,5 @@
-from portfolio import *
+from portfolio.core.portfolio import Portfolio
+from portfolio.core.stock import Stock
 from datetime import datetime
 
 
