@@ -1,5 +1,7 @@
-from collections import *
-from datetime import datetime
+from portfolio.core.stock import PriceNotFoundError, Stock
+
+
+
 
 class Portfolio:
 
@@ -10,6 +12,13 @@ class Portfolio:
 
     def profit(self, date_1, date_2):
         profits = 0
+
         for stock in self.stocks:
-            profits += stock.price(date_2) - stock.price(date_1)
+            try:
+                date1 = stock.price(date_1)
+                date2 = stock.price(date_2)
+                profits += date1 - date2
+            except PriceNotFoundError as e:
+                print("\n e")
+
         return(profits)

@@ -1,3 +1,4 @@
+from shutil import ExecError
 from portfolio.core.portfolio import Portfolio
 from portfolio.core.stock import Stock
 from datetime import datetime
@@ -26,14 +27,18 @@ s2 = Stock(
 
 def main():
 
-    
-    date_entry = input('\n Please enter a first date in YYYY-MM-DD format: ')
-    year, month, day = map(int, date_entry.split('-'))
-    date1 = datetime(year, month, day)
+    try:
 
-    date_entry = input('\n Please enter a second date in YYYY-MM-DD format: ')
-    year, month, day = map(int, date_entry.split('-'))
-    date2 = datetime(year, month, day)
+        date_entry = input('\n Please enter a first date in YYYY-MM-DD format: ')
+        date1 = datetime.strptime(date_entry, "%Y-%m-%d")
+
+        date_entry = input('\n Please enter a second date in YYYY-MM-DD format: ')
+        date2 = datetime.strptime(date_entry, "%Y-%m-%d")
+    
+    except ValueError:
+        print(f"Invalid format entered :(, please try again!")
+        return
+
 
     myPortfolio = Portfolio([s1, s2]) 
     portfolio = myPortfolio.profit(date1, date2)
