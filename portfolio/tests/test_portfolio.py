@@ -5,23 +5,6 @@ from datetime import datetime
 
 
 
-class TestStockPrice(unittest.TestCase):
-    
-    def test_price(self):
-        mystock = Stock(
-            "Android",
-            {
-                datetime(2020,10,15): 15,
-                datetime(2021,11,20): 25
-
-            }
-        )
-        stock1 = mystock.price(datetime(2020,10,15))
-        stock2 = mystock.price(datetime(2021,11,20))
-        self.assertEqual(stock1,15)
-        self.assertEqual(stock2,25)
-
-
 class TestPortfolioProfit(unittest.TestCase):
 
     def test_profit(self):
