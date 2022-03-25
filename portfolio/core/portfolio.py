@@ -17,7 +17,7 @@ class Portfolio:
             try:
                 date1 = stock.price(date_1)
                 date2 = stock.price(date_2)
-                profits += date1 - date2
+                profits += date2 - date1
             except PriceNotFoundError as e:
                 print("\n", e)
 
