@@ -40,10 +40,15 @@ def main():
 
 
     myPortfolio = Portfolio([s1, s2]) 
-    portfolio = myPortfolio.profit(date1, date2)
+    profit, annualized = myPortfolio.profit(date1, date2)
+    txt = "The annualized profitability obtained was  {:.0%}"
+    
+    
 
-    print(f"\n The profit obtained was {portfolio}")
+    print(f"\n The profit obtained was {profit}")
+    print(f"\n", txt.format(annualized))
     print(f"\n Thanks for use the portfolio :) \n")
+    
 
 
 main()
