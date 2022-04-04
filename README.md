@@ -22,12 +22,12 @@ In this file there is also a **class** `PriceNotFoundError`, this is the ***erro
 In this file is not only the `main` function that does all the magic, it also contains a simulation of a stock stock composed as follows: 
 
 ~~~
-s1 = Stock(
-            "Google", 
-            {
-                datetime(2019, 1, 1): 12, 
-                datetime(2020, 1, 2): 20
-            })
+        s1 = Stock(
+                    "Google", 
+                    {
+                        datetime(2019, 1, 1): 12, 
+                        datetime(2020, 1, 2): 20
+                    })
 ~~~
 
 * A list containing
@@ -66,17 +66,37 @@ It also contains a ***menu*** which is composed as follows:
 * In addition, each time you select an option and it returns the desired answer, the program is restarted asking you to select a new option.
 
 
-### tests
+### Tests
 
-In this module you will find the tests of the above mentioned files.
+In the test module you will find the tests of the above mentioned files.
 
-* *test_portfolio.py*
+* *test_portfolio*
 
     * This file contains the test case of the `Profit` method which tests the expected result of both the profit and the annualized profitability. 
 
-* *test_stock.py*
+* *test_stock*
 
     * In this file you can find the test case of the `Stock` method which tests the expected result of the `price` method both from the error handling seen in the `except`.
+
+* *testFixtures*
+
+    * In this file, as its name indicates, there are the *`accessories`* for the tests, in this case there is only a function that returns an error to test the operation of the error handling implemented in the file 'stock.py' of the class 'PriceNotFoundError'.
+
+
+### Bonus Track
+
+For the bonus track we added to the `Profit` method the return of the ***annualized profitability***, this was implemented following the following [formula](https://economipedia.com/definiciones/rentabilidad-anual.html), this can be found in the above mentioned portfolio.py file
+
+~~~
+            annualized_return = (
+                (final_value / init_value) - 1) * (365 / date_diff)
+~~~
+
+* Both the `init_value` and `final_value` are the sum of the prices of the start and end dates respectively.
+
+    * It is worth noting that although the formula indicates the *division by the number of years*, the same is done but it is expressed in days to take into account the months and days of difference between one year and another. 
+    
+        * For this reason the `365/date_diff` is shown, since the `date_diff` is the difference between the final date and the initial date expressed in days.
 
 
 ## Usage
@@ -94,4 +114,3 @@ To run the tests
 ~~~
 python -m unittest
 ~~~
-
