@@ -21,7 +21,7 @@ class TestPortfolioProfit(unittest.TestCase):
         date2 = datetime(2021, 4, 9)
         portfolio, portfolio2 = myportfolio.profit(date1, date2)
         self.assertEquals(portfolio, 20)
-        self.assertEquals(portfolio2, 0.8)
+        self.assertEquals(portfolio2, 1.5783783783783785)
 
 
 if __name__ == "__main__":
