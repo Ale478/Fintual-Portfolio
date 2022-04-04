@@ -38,7 +38,6 @@ class TestPortfolioProfit(unittest.TestCase):
         portfolio, portfolio2 = myportfolio.profit(date1, date2)
         self.assertEquals(portfolio, 0)
 
-
     def test_anualizedReturn(self):
         s1 = Stock("Samsung", {
             datetime(2021, 11, 16): 15,
@@ -53,8 +52,7 @@ class TestPortfolioProfit(unittest.TestCase):
         date1 = datetime(2021, 11, 16)
         date2 = datetime(2022, 12, 20)
         portfolio, portfolio2 = myportfolio.profit(date1, date2)
-        self.assertEquals(portfolio2,0.2613677049767276)
-
+        self.assertEquals(portfolio2, 0.2613677049767276)
 
     def test_anualizedReturn_Error(self):
         s1 = Stock("Samsung", {
@@ -70,7 +68,7 @@ class TestPortfolioProfit(unittest.TestCase):
         date1 = datetime(2020, 2, 6)
         date2 = datetime(2022, 12, 20)
         portfolio, portfolio2 = myportfolio.profit(date1, date2)
-        self.assertEquals(portfolio2,0)
+        self.assertEquals(portfolio2, 0)
 
 
 if __name__ == "__main__":
