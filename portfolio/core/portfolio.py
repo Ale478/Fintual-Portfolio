@@ -1,9 +1,15 @@
 from portfolio.core.stock import PriceNotFoundError
 
 
-
 class Portfolio:
+    """ Represents a person's portfolio along with their stocks.
 
+    Provides profits and annualized returns based on 
+    a given period of dates
+    
+    Attributes:
+        stocks: represents the stocks in a portfolio.
+    """
 
     def __init__(self, stocks):
         self.stocks = stocks
@@ -11,6 +17,18 @@ class Portfolio:
     # Receives two dates and returns the benefit between those dates
 
     def profit(self, date_1, date_2):
+        """ Returns the annual profit and return.
+        
+
+        Args:
+            date_1 {datetime}: start date.
+            date_2 {datetime}: end date
+
+        Returns:
+            profits: profit between the two dates
+            annualized_return: annualized return between the two dates 
+        
+        """
         profits = 0
         init_value = 0
         final_value = 0
