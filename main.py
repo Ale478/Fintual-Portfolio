@@ -11,6 +11,17 @@ s2 = Stock("Apple", {datetime(2019, 1, 1): 10, datetime(2020, 1, 2): 19})
 
 
 def main():
+    print(f"\nAvaible Stock:\n"
+          "\n"
+          "\t                                                              \n"
+          "\t  Google:                                                     \n"
+          "\t           2019-01-01 : 12                                    \n"
+          "\t           2020-01-02 : 20                                    \n"
+          "\t                                                              \n"
+          "\t  Apple:                                                      \n"
+          "\t           2019-01-01 : 10                                    \n"
+          "\t           2020-01-02): 19                                    \n"
+          "\t                                                              \n")
 
     print(f"\nChoose what you want to do. Options are:\n"
           "\n"
